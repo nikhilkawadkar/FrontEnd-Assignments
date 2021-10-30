@@ -30,8 +30,12 @@ public class DessertShop {
 			}else if(key == 2){	
 				customer.placeOrder(candy, cookies, iceCream);
 			}
-			
-			
+			else if(key == 0){
+				int num = sc.nextInt();
+				if (num == 1) {
+					isTrue = false;
+				}
+			}	
 		}
 		sc.close();
 	}
