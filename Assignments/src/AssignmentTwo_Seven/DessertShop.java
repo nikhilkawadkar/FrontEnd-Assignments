@@ -17,29 +17,22 @@ public class DessertShop {
 		while(isTrue) {
 			
 			System.out.println("\n\nOwner or Cutomer");
-			System.out.println("0 to exit");
+			System.out.println("press 1 for Owner press 2 for customer and 0 to exti");
 			 
-			String person = sc.nextLine();
+			 
+			int key = sc.nextInt();
 			
-			if(person.equalsIgnoreCase("owner")) {
+			if(key == 1) {
 				System.out.println("\n"+"Owner:");
 			 
 				owner.addDessert(candy, cookies, iceCream);	
 				
-			}else if(person.equalsIgnoreCase("customer")){	
+			}else if(key == 2){	
 				customer.placeOrder(candy, cookies, iceCream);
-			}else {
-				int num = sc.nextInt();
-				if (num == 1) {
-					isTrue = false;
-				}
 			}
 			
 			
 		}
-		
-		
 		sc.close();
 	}
-
 }
