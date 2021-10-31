@@ -1,6 +1,5 @@
 package Generics_1;
-
-import java.util.HashMap;
+ 
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -23,11 +22,7 @@ public class EmployeeDemo {
 			System.out.println();
 			
 		}
-		
-		
-
 	}
-
 }
 
 class Employee {
