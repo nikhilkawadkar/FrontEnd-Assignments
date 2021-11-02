@@ -15,7 +15,8 @@ public class unSupExc {
 		 b = sc.nextInt();	
 		
 		try {		
-			 name(a, b);	 
+			 name(a, b);	
+			 
 		} catch (UnsupportedOperationException e) {
 			
 			System.out.println("Error: "+e.getMessage());
