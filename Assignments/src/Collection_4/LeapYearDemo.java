@@ -61,8 +61,6 @@ class DateDemo {
 	public String getDate() {
 		return date;
 	}
-	 
-	
-	
+ 
 }
 
