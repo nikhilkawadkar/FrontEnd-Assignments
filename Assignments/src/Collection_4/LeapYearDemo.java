@@ -61,12 +61,6 @@ class DateDemo {
 	public String getDate() {
 		return date;
 	}
-<<<<<<< HEAD
  
-=======
-	 
-	
-	
->>>>>>> branch 'master' of https://github.com/nikhilkawadkar/Assignments.git
 }
 
