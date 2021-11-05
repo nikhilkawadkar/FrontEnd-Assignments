@@ -33,8 +33,8 @@ public class StreamDemo {
 				new News(1, "E" , "I", "Hello"),
 				new News(2, "F" , "J", "Hiii"),
 				new News(1, "F" , "K", "Thankyou"),
-				new News(4, "H" , "L", "Welcome"),
-				new News(4, "H" , "L", "Welcome")
+				new News(4, "H" , "I", "Welcome")
+				 
 				); 
 
 		List<Trader> traderList = Arrays.asList(
@@ -52,52 +52,33 @@ public class StreamDemo {
 				);
 		
 		
-		// First Question
+		// 1st Question
 		
 		System.out.println("Stream First Question output");
 		
 		fruitList.stream().filter(l -> l.calories<100).forEach(l -> System.out.println(l.name));
 		
 	
-		// Second Question 
+		// 2nd Question 
 		System.out.println("\n"+"Stream Second Question output");
-		fruitList.stream().forEach(l -> {
-			if(l.color.equals("Red")) {
-				System.out.println(l.name + " is " + l.color);
-			}else {
-				System.out.println(l.name + " is " + l.color);
-			}
-			});
+		fruitList.stream().sorted(Comparator.comparing(l -> l.color)).forEach( l-> System.out.println(l));
 		 
 		
 		
-		 //Fourth Question
+		 //4th Question
 		
-		System.out.println("\n"+"Stream Second Question output");
-		List<Integer> lst = new ArrayList<>();
-		 
-		for (Iterator iterator = newsList.iterator(); iterator.hasNext();) {
-			News n = (News) iterator.next();
-			 lst.add(n.newsId);
-		}
-		
-		lst.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+		System.out.println("\n"+"Stream 4th Question output");
+		newsList.stream().collect(Collectors.groupingBy(l -> l.newsId, Collectors.counting()))
 	      .entrySet()
 	      .stream()
 	      .max(Map.Entry.comparingByValue())
 	      .ifPresent(l-> System.out.println("News Id : "+ l.getKey() + " has the maxium comment i.e. :" + l.getValue()));
 		 
-
-		//Sixth Question
-		System.out.println("\n"+"Stream six Question output");
-		List<String> lsts = new ArrayList<>();
-		 
-		for (Iterator iterator = newsList.iterator(); iterator.hasNext();) {
-			News n = (News) iterator.next();
-			 lsts.add(n.commentByUser);
-		}
 		
-		lsts.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+		
+		//6th Question
+		System.out.println("\n"+"Stream six Question output");
+		newsList.stream().collect(Collectors.groupingBy(l->l.commentByUser, Collectors.counting()))
 	      .entrySet()
 	      .stream()
 	      .max(Map.Entry.comparingByValue())
@@ -137,6 +118,11 @@ class Fruit{
 		this.price = price;
 		this.color = color;
 	}
+	@Override
+	public String toString() {
+		return "Fruit [name=" + name + ", calories=" + calories + ", price=" + price + ", color=" + color + "]";
+	}
+	
 	
 	
 }
