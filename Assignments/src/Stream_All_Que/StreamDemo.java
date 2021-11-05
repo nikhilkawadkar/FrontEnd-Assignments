@@ -38,10 +38,10 @@ public class StreamDemo {
 				); 
 
 		List<Trader> traderList = Arrays.asList(
-				new Trader("M", "Q"),
-				new Trader("N", "R"),
-				new Trader("O", "S"),
-				new Trader("P", "T")
+				new Trader("O", "Pune"),
+				new Trader("N", "Mumbai"),
+				new Trader("M", "pune"),
+				new Trader("P", "Nashik")
 				);
 		
 		List<Transaction> transactionList = Arrays.asList(
@@ -108,6 +108,11 @@ public class StreamDemo {
 		System.out.println("\n"+"Stream 8th Question output");
 		transactionList.stream().filter(l -> l.year == 2011).sorted(Comparator.comparingInt(l-> l.value)).forEach(l -> System.out.println(l));
 		
+		// 10th Question
+		System.out.println("\n"+"Stream 10th Question output");
+		traderList.stream().filter(l -> l.city.equalsIgnoreCase("Pune")).sorted(Comparator.comparing(l -> l.name)).forEach(l -> System.out.println(l));
+		
+		
 		//14th question
 		System.out.println("\n"+"Stream 14th Question output");
 		transactionList.stream().max(Comparator.comparingInt(l-> l.value)).ifPresent(System.out::println);;
@@ -158,6 +163,12 @@ class Trader{
 		super();
 		this.name = name;
 		this.city = city;
+	}
+	
+	@Override
+	public String toString() {
+		 
+		return name+" "+ city;
 	}
 	
 }
