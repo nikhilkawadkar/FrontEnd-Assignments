@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
@@ -45,8 +46,8 @@ public class StreamDemo {
 		
 		List<Transaction> transactionList = Arrays.asList(
 				new Transaction(traderList.get(0), 2000, 1000),
-				new Transaction(traderList.get(1), 2001, 8000),
-				new Transaction(traderList.get(2), 2002, 3000),
+				new Transaction(traderList.get(1), 2011, 8000),
+				new Transaction(traderList.get(2), 2011, 3000),
 				new Transaction(traderList.get(3), 2003, 6000)
 				);
 		
@@ -103,6 +104,14 @@ public class StreamDemo {
 	      .ifPresent(l-> System.out.println("User Id : "+ l.getKey() + " has did the maximum comment i.e. :" + l.getValue()));
 		
 
+		// Eight Question
+		System.out.println("\n"+"Stream 8th Question output");
+		transactionList.stream().filter(l -> l.year == 2011).sorted(Comparator.comparingInt(l-> l.value)).forEach(l -> System.out.println(l));
+		
+		//14th question
+		System.out.println("\n"+"Stream 14th Question output");
+		transactionList.stream().max(Comparator.comparingInt(l-> l.value)).ifPresent(System.out::println);;
+		 
 }
 
 	 
@@ -162,6 +171,11 @@ class Transaction{
 		this.trader = trader;
 		this.year = year;
 		this.value = value;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		  return trader.name +" "+year+ " " +value ;
 	}
 	
 }
