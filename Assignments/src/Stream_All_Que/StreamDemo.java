@@ -85,13 +85,20 @@ public class StreamDemo {
 	      .ifPresent(l-> System.out.println("User Id : "+ l.getKey() + " has did the maximum comment i.e. :" + l.getValue()));
 		
 
-		// Eight Question
+		// 8th Question
 		System.out.println("\n"+"Stream 8th Question output");
-		transactionList.stream().filter(l -> l.year == 2011).sorted(Comparator.comparingInt(l-> l.value)).forEach(l -> System.out.println(l));
+		
+		transactionList.stream().filter(l -> l.year == 2011).sorted(Comparator.comparingInt(l-> l.value))
+		.forEach(l -> System.out.println(l));
+		
+		//9th 
+		System.out.println("\n"+"Stream 9th Question output");
+		traderList.stream().map(l-> l.city.toLowerCase()).distinct().forEach(l -> System.out.println(l));
 		
 		// 10th Question
 		System.out.println("\n"+"Stream 10th Question output");
-		traderList.stream().filter(l -> l.city.equalsIgnoreCase("Pune")).sorted(Comparator.comparing(l -> l.name)).forEach(l -> System.out.println(l));
+		traderList.stream().filter(l -> l.city.equalsIgnoreCase("Pune")).sorted(Comparator.comparing(l -> l.name))
+		.forEach(l -> System.out.println(l));
 		
 		
 		//14th question
@@ -171,7 +178,6 @@ class Transaction{
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		  return trader.name +" "+year+ " " +value ;
 	}
 	

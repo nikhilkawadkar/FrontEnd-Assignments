@@ -14,8 +14,6 @@ public class Pair<k, v> {
 	public <k,v> String showData() {
 		
 		return key+"  "+value;
-	}
-
-	 
+	} 
 
 }

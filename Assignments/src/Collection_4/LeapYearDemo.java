@@ -58,9 +58,5 @@ class DateDemo {
 		return "[date=" + date + "]";
 	}
 
-	public String getDate() {
-		return date;
-	}
- 
 }
 
