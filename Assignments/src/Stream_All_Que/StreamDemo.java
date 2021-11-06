@@ -41,7 +41,7 @@ public class StreamDemo {
 				new Trader("O", "Pune"),
 				new Trader("N", "Mumbai"),
 				new Trader("M", "pune"),
-				new Trader("P", "Nashik")
+				new Trader("P", "Delhi")
 				);
 		
 		List<Transaction> transactionList = Arrays.asList(
@@ -100,6 +100,9 @@ public class StreamDemo {
 		traderList.stream().filter(l -> l.city.equalsIgnoreCase("Pune")).sorted(Comparator.comparing(l -> l.name))
 		.forEach(l -> System.out.println(l));
 		
+		//13
+		System.out.println("\n"+"Stream 13th Question output");
+		transactionList.stream().filter(l-> l.trader.city.equalsIgnoreCase("Delhi")).forEach(System.out::println);
 		
 		//14th question
 		System.out.println("\n"+"Stream 14th Question output");
@@ -178,7 +181,7 @@ class Transaction{
 	}
 	@Override
 	public String toString() {
-		  return trader.name +" "+year+ " " +value ;
+		  return trader +" "+year+ " " +value ;
 	}
 	
 }
