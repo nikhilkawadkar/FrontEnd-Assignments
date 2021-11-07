@@ -33,7 +33,7 @@ public class MenuDemo {
 				}catch(IOException e){
 					e.printStackTrace();
 				}
-				System.out.println("Do you want to enter price for more item : ");
+				System.out.println("Do you want to enter price for more item press 1 to for menu and 0 to exit");
 				  yN = sc.nextInt();
 				sc.nextLine();
 				if (yN == 0) {
