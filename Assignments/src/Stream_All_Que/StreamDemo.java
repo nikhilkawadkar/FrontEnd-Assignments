@@ -78,7 +78,7 @@ public class StreamDemo {
 		
 		// 5th Question
 		System.out.println("\n"+"Stream 5th Question output");
-		newsList.stream().collect(Collectors.groupingBy(l -> l.comment, Collectors.counting()))
+		newsList.stream().filter(l-> l.comment.equalsIgnoreCase("Budget")).collect(Collectors.groupingBy(l -> l.comment, Collectors.counting()))
 	    .entrySet().stream().max(Map.Entry.comparingByValue())
 	    .ifPresent(l-> System.out.println( l.getKey() + " are arrived " + l.getValue() + " times")); 
 		
