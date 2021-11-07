@@ -31,7 +31,7 @@ public class StreamDemo {
 		
 		List<News> newsList = Arrays.asList(
 				new News(1, "E" , "I", "Hello"),
-				new News(2, "F" , "J", "Budget"),
+				new News(2, "F" , "J", "our Budget is"),
 				new News(1, "F" , "K", "Thankyou"),
 				new News(4, "H" , "I", "Budget")
 				 
@@ -78,10 +78,8 @@ public class StreamDemo {
 		
 		// 5th Question
 		System.out.println("\n"+"Stream 5th Question output");
-		newsList.stream().filter(l-> l.comment.equalsIgnoreCase("Budget")).collect(Collectors.groupingBy(l -> l.comment, Collectors.counting()))
-	    .entrySet().stream().max(Map.Entry.comparingByValue())
-	    .ifPresent(l-> System.out.println( l.getKey() + " are arrived " + l.getValue() + " times")); 
-		
+		Long count =  newsList.stream().filter(l-> l.comment.contains("Budget")).count();
+		System.out.println("No. of comments consist of Budget are : " +count);
 		
 		// 6th Question
 		System.out.println("\n"+"Stream 6th Question output");
