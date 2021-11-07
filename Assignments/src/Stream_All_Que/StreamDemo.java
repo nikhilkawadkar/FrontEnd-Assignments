@@ -31,9 +31,9 @@ public class StreamDemo {
 		
 		List<News> newsList = Arrays.asList(
 				new News(1, "E" , "I", "Hello"),
-				new News(2, "F" , "J", "Hiii"),
+				new News(2, "F" , "J", "Budget"),
 				new News(1, "F" , "K", "Thankyou"),
-				new News(4, "H" , "I", "Welcome")
+				new News(4, "H" , "I", "Budget")
 				 
 				); 
 
@@ -41,7 +41,8 @@ public class StreamDemo {
 				new Trader("O", "Pune"),
 				new Trader("N", "Mumbai"),
 				new Trader("M", "pune"),
-				new Trader("P", "Delhi")
+				new Trader("P", "Delhi"),
+				new Trader("Q", "Indore")
 				);
 		
 		List<Transaction> transactionList = Arrays.asList(
@@ -53,9 +54,7 @@ public class StreamDemo {
 		
 		
 		// 1st Question
-		
 		System.out.println("Stream First Question output");
-		
 		fruitList.stream().filter(l -> l.calories<100).forEach(l -> System.out.println(l.name));
 		
 	
@@ -64,56 +63,82 @@ public class StreamDemo {
 		fruitList.stream().sorted(Comparator.comparing(l -> l.color)).forEach( l-> System.out.println(l));
 		 
 		
+		// 3rd Question
+		System.out.println("\n"+"Stream 3rd Question output");
+		fruitList.stream().filter(l -> l.color.equalsIgnoreCase("Red")).sorted(Comparator.comparingInt(l-> l.price))
+		.forEach(System.out::println);
 		
-		 //4th Question
 		
+		// 4th Question
 		System.out.println("\n"+"Stream 4th Question output");
 		newsList.stream().collect(Collectors.groupingBy(l -> l.newsId, Collectors.counting()))
-	      .entrySet()
-	      .stream()
-	      .max(Map.Entry.comparingByValue())
-	      .ifPresent(l-> System.out.println("News Id : "+ l.getKey() + " has the maxium comment i.e. :" + l.getValue()));
-		 
+	    .entrySet().stream().max(Map.Entry.comparingByValue())
+	    .ifPresent(l-> System.out.println("News Id : "+ l.getKey() + " has the maxium comment i.e. :" + l.getValue()));
 		
 		
-		//6th Question
-		System.out.println("\n"+"Stream six Question output");
+		// 5th Question
+		System.out.println("\n"+"Stream 5th Question output");
+		newsList.stream().collect(Collectors.groupingBy(l -> l.comment, Collectors.counting()))
+	    .entrySet().stream().max(Map.Entry.comparingByValue())
+	    .ifPresent(l-> System.out.println( l.getKey() + " are arrived " + l.getValue() + " times")); 
+		
+		
+		// 6th Question
+		System.out.println("\n"+"Stream 6th Question output");
 		newsList.stream().collect(Collectors.groupingBy(l->l.commentByUser, Collectors.counting()))
-	      .entrySet()
-	      .stream()
-	      .max(Map.Entry.comparingByValue())
-	      .ifPresent(l-> System.out.println("User Id : "+ l.getKey() + " has did the maximum comment i.e. :" + l.getValue()));
+		.entrySet().stream().max(Map.Entry.comparingByValue())
+	    .ifPresent(l-> System.out.println("User Id : "+ l.getKey() + " has did the maximum comment i.e. :" + l.getValue()));
+		
+		
+		// 7th Question
+		System.out.println("\n"+"Stream 7th Question output");
+		newsList.stream().collect(Collectors.groupingBy(l->l.commentByUser, Collectors.counting()))
+		.entrySet().stream()
+		.forEach(l -> System.out.println(l));
 		
 
 		// 8th Question
 		System.out.println("\n"+"Stream 8th Question output");
-		
 		transactionList.stream().filter(l -> l.year == 2011).sorted(Comparator.comparingInt(l-> l.value))
 		.forEach(l -> System.out.println(l));
+
 		
-		//9th 
+		// 9th Question
 		System.out.println("\n"+"Stream 9th Question output");
 		traderList.stream().map(l-> l.city.toLowerCase()).distinct().forEach(l -> System.out.println(l));
+		
 		
 		// 10th Question
 		System.out.println("\n"+"Stream 10th Question output");
 		traderList.stream().filter(l -> l.city.equalsIgnoreCase("Pune")).sorted(Comparator.comparing(l -> l.name))
 		.forEach(l -> System.out.println(l));
 		
-		//13
+		
+		// 11th Question
+		System.out.println("\n"+"Stream 11th Question output");
+		traderList.stream().sorted(Comparator.comparing(l -> l.name)).map(l -> l.name).forEach(System.out::println);
+		
+		
+		// 12th Question
+		System.out.println("\n"+"Stream 12th Question output");
+		traderList.stream().filter(l -> l.city.equalsIgnoreCase("Indore")).forEach(System.out::println);
+		
+		
+		// 13th Question
 		System.out.println("\n"+"Stream 13th Question output");
 		transactionList.stream().filter(l-> l.trader.city.equalsIgnoreCase("Delhi")).forEach(System.out::println);
 		
-		//14th question
+		
+		// 14th Question
 		System.out.println("\n"+"Stream 14th Question output");
-		transactionList.stream().max(Comparator.comparingInt(l-> l.value)).ifPresent(System.out::println);;
+		transactionList.stream().max(Comparator.comparingInt(l-> l.value)).ifPresent(System.out::println);
+		
+		// 15th Question
+		System.out.println("\n"+"Stream 15th Question output");
+		transactionList.stream().min(Comparator.comparingInt(l-> l.value)).ifPresent(System.out::println);
 		 
+	}	 
 }
-
-	 
-}
-
-
 
 
 class Fruit{
@@ -131,11 +156,9 @@ class Fruit{
 	@Override
 	public String toString() {
 		return "Fruit [name=" + name + ", calories=" + calories + ", price=" + price + ", color=" + color + "]";
-	}
-	
-	
-	
+	}	
 }
+
 
 class News{
 	int newsId;
@@ -149,7 +172,6 @@ class News{
 		this.commentByUser = commentByUser;
 		this.comment = comment;
 	}
-	
 }
 
 class Trader{
@@ -165,8 +187,7 @@ class Trader{
 	public String toString() {
 		 
 		return name+" "+ city;
-	}
-	
+	}	
 }
 
 class Transaction{
@@ -182,6 +203,5 @@ class Transaction{
 	@Override
 	public String toString() {
 		  return trader +" "+year+ " " +value ;
-	}
-	
+	}	
 }
