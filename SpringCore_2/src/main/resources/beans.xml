@@ -3,22 +3,24 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
            
-           <bean id="question" class="SpringCore_2nd_que.Question">  
-<constructor-arg index="0" value="1"/>  
-<constructor-arg index="1" value="Name any 2 design pattern ?"></constructor-arg>  
-<constructor-arg index="2">  
-<list>  
- <value>SingeltonDP</value>
- <value>Factory DP</value>
-</list>  
-</constructor-arg> 
+           
+           
+<bean id="question" class="SpringCore_2nd_que.Question">  
+	<constructor-arg index="0" value="1"/>  
+	<constructor-arg index="1" value="Name any 2 design pattern ?"/>  
+	<constructor-arg index="2">  
+	<list>  
+		 <value>SingeltonDP</value>
+		 <value>Factory DP</value>
+	</list>  
+	</constructor-arg> 
 
-<constructor-arg index="3">  
-<set>  
- <value>SingeltonDP</value>
- <value>Factory DP</value>
-</set>  
-</constructor-arg> 
+	<constructor-arg index="3">  
+	<set>  
+		 <value>SingeltonDP</value>
+		 <value>Factory DP</value>
+	</set>  
+	</constructor-arg> 
 
 <constructor-arg index="4">  
 <map>  

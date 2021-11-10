@@ -11,7 +11,9 @@ public class Test {
 		context = new ClassPathXmlApplicationContext("beans.xml");
 		Question question = (Question)context.getBean("question");
 		
-		System.out.println(question.getQuestion() + "\n Ans: " + question.getQuestionList());
+		System.out.println(question.getQuestion() + "\n Ans: " + question.getQuestionMap());
+		
+		System.out.println(question.getClass().getSimpleName());
 	}
 
 }
