@@ -14,12 +14,14 @@ public class BankAccountcontroller implements ApplicationContextAware, BeanNameA
 	public void withdraw(long accountld, double balance) {
 		
 		 obj.accountBalance -= balance;
+		 System.out.println(obj.accountBalance);
 		
 	}
 	
 	public void deposit(long accountld, double balance) {
 		
 		 obj.accountBalance += balance;
+		 System.out.println(obj.accountBalance);
 		
 	}
 	public long getBalance(long accountld) {

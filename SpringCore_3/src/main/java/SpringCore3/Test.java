@@ -9,8 +9,12 @@ public class Test {
 		 
 		context = new ClassPathXmlApplicationContext("bean.xml");
 		BankAccount account = (BankAccount)context.getBean("Account");
+
 		System.out.println(account.accountBalance);
+
 		BankAccountcontroller account2 = (BankAccountcontroller)context.getBean("controller");
+		account2.deposit(1, 1000);
+		
 		System.out.println(account2.getBalance(10));
 	}
 

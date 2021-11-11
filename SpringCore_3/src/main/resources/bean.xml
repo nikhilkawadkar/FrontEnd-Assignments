@@ -5,6 +5,8 @@
   
 	<!-- using constructor injection -->
 	<bean id="controller" class="SpringCore3.BankAccountcontroller"/>
+	
+	
 	<bean id="Account" class="SpringCore3.BankAccount" autowire="byType">  
 		<constructor-arg   value="1"/>
 		<constructor-arg  value="Nikhil kawadkar"/>

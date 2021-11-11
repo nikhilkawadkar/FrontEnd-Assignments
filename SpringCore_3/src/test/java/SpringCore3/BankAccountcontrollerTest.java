@@ -13,6 +13,8 @@ public class BankAccountcontrollerTest {
 	@Test
 	public void test() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+		
+		
 		Object controller = context.getBean("controller");
 		
 		assertEquals(controller.getClass().getSimpleName(), "BankAccountcontroller");
