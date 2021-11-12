@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [13/Nov/2021:01:31:50 +0530] "GET / HTTP/1.1" 404 951 http-bio-8080-exec-2 34
+0:0:0:0:0:0:0:1 - - [13/Nov/2021:01:32:00 +0530] "GET /spring/login HTTP/1.1" 200 351 http-bio-8080-exec-3 583
+0:0:0:0:0:0:0:1 - - [13/Nov/2021:01:32:09 +0530] "POST /spring/login HTTP/1.1" 200 138 http-bio-8080-exec-4 92
+0:0:0:0:0:0:0:1 - - [13/Nov/2021:01:32:15 +0530] "GET /spring/login HTTP/1.1" 200 351 http-bio-8080-exec-5 5
+0:0:0:0:0:0:0:1 - - [13/Nov/2021:01:32:30 +0530] "GET /spring/login HTTP/1.1" 200 347 http-bio-8080-exec-6 48
+0:0:0:0:0:0:0:1 - - [13/Nov/2021:01:33:06 +0530] "POST /spring/login HTTP/1.1" 200 140 http-bio-8080-exec-7 69
+0:0:0:0:0:0:0:1 - - [13/Nov/2021:01:33:13 +0530] "GET /spring/login HTTP/1.1" 200 347 http-bio-8080-exec-9 3
