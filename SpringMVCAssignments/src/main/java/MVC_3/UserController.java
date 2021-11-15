@@ -18,10 +18,10 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	
 	public String sayHelloWelcome(ModelMap model,@RequestParam String name, @RequestParam String password) {
-		
 		if(name.equals(userModel.userName) && password.equals(userModel.password)) {
-			model.put("print", "Welcome");
+			 
 			return "success";
 		}else {
 			return "error";

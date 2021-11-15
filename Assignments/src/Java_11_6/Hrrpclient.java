@@ -11,10 +11,7 @@ public class Hrrpclient {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		 String url = "http://httpbin.org/get";
 
-	        var request = HttpRequest.newBuilder()
-	            .uri(URI.create(url))
-	            .GET()
-	            .build();
+	        var request = HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
 
 	        var client = HttpClient.newHttpClient();
 

@@ -9,7 +9,7 @@
 <body>
 <h1>Login Page</h1>
  
-<form action="/spring/login" method="POST">
+<form action="/login" method="POST">
 		Name :      <input name="name" type="text" /><br>
 		Passeord : <input name="password" type="password"/> 
 		 <input type="submit" />
