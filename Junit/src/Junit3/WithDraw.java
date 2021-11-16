@@ -19,7 +19,7 @@ public class WithDraw {
 			
 			demoAccount.withDraw(amount);
 			
-		} catch (InSufficientBalanceException e) {
+		} catch (Exception e) {
 			
 			System.out.println(e);
 			 

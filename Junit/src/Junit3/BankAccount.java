@@ -10,7 +10,7 @@ public class BankAccount {
 	}
 	
 	public void withDraw(double amount) throws InSufficientBalanceException{
-		if( balance < amount || balance==0) {
+		if( balance < amount) {
 			throw new InSufficientBalanceException();
 		}else {
 			balance -= amount;
