@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(188, 245, 245);
+}
+h2{
+    text-transform: uppercase;
+}
+h3::first-letter{
+    text-transform: uppercase;
+}

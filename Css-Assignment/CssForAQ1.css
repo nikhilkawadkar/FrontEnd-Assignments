@@ -1,0 +1,29 @@
+div,h1,h4,p{
+    margin: 0%;
+}
+
+div{
+    width: 100%;
+    height: auto;
+    padding: 0;
+    background-color: cadetblue;
+}
+ 
+ h1{
+     background-color: #42e7f3;
+     padding-bottom: 30px;
+ }
+ h4{
+     margin: 10px 0 25px 0;  
+ }
+
+ p{
+    padding: 10px 0 25px 0; 
+     background-color: cyan;
+ }
+
+ div#space{
+     height: 20px;
+     width: 100%;
+     background-color: cyan;
+ }
