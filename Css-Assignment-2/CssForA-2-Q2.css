@@ -1,0 +1,49 @@
+h1{
+    text-align: center;
+}
+
+body{
+    font-family:"Lato", sans-serif;
+    background-image: url(images/addCrop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 1em;
+}
+ 
+textarea{
+    height: 50px;
+    margin: 0 0 20px 0;
+    border-radius: 3px;
+    width: 100%;
+    border: 1px solid green;
+}
+form{
+    background-color: rgba(255, 255, 255, 0.582);
+    border-radius: 5px;
+    margin: auto;
+    max-width: 1200px;
+    width: 200px;
+    height: auto;
+    text-align: center;
+    padding: 30px;
+}
+ 
+
+input{
+    margin: 0 0 20px 0;
+    border-radius: 3px;
+    border: 1px solid green;
+    font-size: 1em;
+}
+input[type="submit"]{
+    background-color: green;
+    width: 90px;
+}
+
+@media (max-width:900px) {
+    body{
+        background-size:900px auto ;
+    }
+   
+}
